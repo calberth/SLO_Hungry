@@ -1,0 +1,122 @@
+
+body {
+	color:#FF7722; /*obviously just placeholder colors for now*/
+	background-color: #EEE9E9;
+	font-family: sans-serif;
+}
+
+h1 {
+	margin: 0 0 0 0;
+}
+
+h2 {
+	text-align: center;
+}
+
+h3 {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+	color: #A2BC13;
+}
+a:link {
+	color:#3A3A38;
+}
+a:hover {
+	color:#A2BC13;
+}
+
+a:active {
+	color:#A2BC13;
+}
+
+ul {
+	padding: 0 0 0 0;
+}
+
+
+button:hover {
+	background-color:#A2BC13; 
+}
+
+.container {
+	position: relative;
+	height: 90%;
+	margin-left: 75px;
+	margin-top: 50px;
+}
+
+.restaurant_holder {
+	position: relative;
+	padding: 2px;
+	border:1px black solid;
+	height: 150px;
+	width: 700px;
+}
+
+.details {
+	position: absolute;
+	max-height: inherit;
+	width: 400px;
+	margin-left: 300px;
+	height: 75px;
+}
+
+.restaurant_image {
+	position: absolute;
+	height: inherit;
+	width: 300px;
+}
+
+.ratings {
+	position: absolute;
+	text-align: center;
+    max-height: inherit;
+    width: 400px;
+    margin-left: 300px;
+    margin-top: 75px;
+    height: 75px;
+}
+
+.info_page_container {
+	position: relative;
+	max-height: inherit;
+	margin-top: 30px;
+	margin-left: 30px;
+}
+
+.bigImage {
+	position: absolute;
+	float:left;
+	height:350px;
+	width: 600px
+}
+
+.info_box {
+	position: absolute;
+    width: 350px;
+    margin-left: 620px;
+    height: 400px;
+    
+    border: 1px solid black;
+}
+
+.rating_box {
+	position: absolute;
+    margin-left: 1000;
+    margin-top: 10px;
+}
+
+.reviews {
+	position: absolute;
+    margin-top: 400px;
+    width: 1000px;
+}
+
+.user_image {
+	position: absolute;
+	height: inherit;
+	width: 200px;
+}
