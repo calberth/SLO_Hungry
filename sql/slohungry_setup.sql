@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS Restuarants (
    hours VARCHAR(32) NOT NULL,
    website VARCHAR(128) NOT NULL,
    location VARCHAR(256) NOT NULL,
+   image VARCHAR(64),
    PRIMARY KEY (id)
 );
 
@@ -20,17 +21,17 @@ CREATE TABLE IF NOT EXISTS Food (
    PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS Profile (
+CREATE TABLE IF NOT EXISTS Profiles (
    id INT NOT NULL AUTO_INCREMENT,
-   name VARCHAR(128) NOT NULL,
-   email VARCHAR(32) NOT NULL,
-   salt VARCHAR(128) NOT NULL,
-   goodpass VARCHAR(256) NOT NULL,
+   name VARCHAR(64) NOT NULL,
+   email VARCHAR(32),
+   goodpass VARCHAR(256),
    PRIMARY KEY (id)
 );
 
 CREATE TABLE IF NOT EXISTS Reviews (
    userId INT REFERENCES Profile(id),
+   restId INT REFERENCES Restuarants(id),
    comment VARCHAR(564),
    price INT,
    rating INT
