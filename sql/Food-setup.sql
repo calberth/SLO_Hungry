@@ -3,7 +3,6 @@
 —- columns : fId, type
 
 INSERT INTO FOODS VALUES
-	(0, 'American'), 
 	(1, 'Barbecue'), 
 	(2, 'Delis'), 
 	(3, 'Seafood'), 
@@ -18,5 +17,6 @@ INSERT INTO FOODS VALUES
 	(12, 'Japanese'), 
 	(13, 'Mexican'), 
 	(14, 'Pizza'), 
-	(15, 'Thai')
+	(15, 'Thai'),
+	(16, 'American')
 ;

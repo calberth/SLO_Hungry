@@ -1,3 +1,4 @@
+//JS for signup page
 $(document).ready(function(){
 
    $("#passCheck").hide();
@@ -13,7 +14,7 @@ $(document).ready(function(){
          $("#passCheck").hide();
          $("#emailWarning").hide(); 
 
-
+         //might change the host for different 
          $.post("http://localhost:8080/SLO_Hungry/api/signup.php", 
             {name: name,
             email: email,

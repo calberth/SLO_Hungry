@@ -18,7 +18,7 @@ else {
    $goodpass = $row['goodpass'];
 
    if (password_verify($pass, $goodpass)) {
-      $json = array("status" => 1, "msg" => "Login Successful", "uId" = $row['id']);
+      $json = array("status" => 1, "msg" => "Login Successful", "uId" => $row['id']);
    }
    else {
       $json = array("status" => 0, "msg" => "Invalid Email or Password");

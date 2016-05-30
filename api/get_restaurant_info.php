@@ -14,8 +14,9 @@ $result = mysql_query($query);
 
 if (mysql_num_rows($result) == 1) {
    while ($row = mysql_fetch_assoc($result)) {
-      $json = array("name" => $row['name'], "location" => $row['location'], "hours" => $row['hours'],
-       "image" => $row['image'], "website" => $row['website']);
+      $json = array('id' => $row['id'], "name" => $row['name'], "location" => $row['location'], "hours" => $row['hours'],
+       "image" => $row['image'], "website" => $row['website'], "phone" => $row['phone'], 'rating' => $row['rating'],
+       "status" => 1);
    }
 }
 else {
