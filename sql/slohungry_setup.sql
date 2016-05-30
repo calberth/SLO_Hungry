@@ -5,12 +5,14 @@ CREATE DATABASE IF NOT EXISTS slohungry;
 USE slohungry;
 
 -- Tables For SLO HUngry
-CREATE TABLE IF NOT EXISTS Restuarants (
+CREATE TABLE IF NOT EXISTS Restaurants (
    id INT NOT NULL AUTO_INCREMENT,
    name VARCHAR(256) NOT NULL,
-   hours VARCHAR(32) NOT NULL,
-   website VARCHAR(128) NOT NULL,
-   location VARCHAR(256) NOT NULL,
+   location VARCHAR(256),
+   phone VARCHAR(25),
+   rating FLOAT,
+   website VARCHAR(128),
+   hours VARCHAR(16),
    image VARCHAR(64),
    PRIMARY KEY (id)
 );
@@ -33,8 +35,8 @@ CREATE TABLE IF NOT EXISTS Reviews (
    userId INT REFERENCES Profile(id),
    restId INT REFERENCES Restuarants(id),
    comment VARCHAR(564),
-   price INT,
-   rating INT
+   price FLOAT,
+   rating FLOAT
 );
 
 CREATE TABLE IF NOT EXISTS FoodRestaurants (

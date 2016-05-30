@@ -1,18 +1,18 @@
 <?php
-//Requested URL : http://localhost/SLO_Hungry/api/get_rest_comments?rId=[restId]&page=[email]
+//Requested URL : http://localhost/SLO_Hungry/api/get_rest_comments?rId=[restId]&page=[page]
  //Returns only 10 favorites per page
 // Include confi.php
 include_once('confi.php');
 
-$restId = isset($_GET['restId']) ? mysql_real_escape_string($_GET['restId']) :  "";
-$page = isset($_GET['page']) ? intval(mysql_real_escape_string($_GET['page'])) :  "";
+$restId = isset($_GET['rId']) ? mysql_real_escape_string($_GET['rId']) :  "";
+$page = isset($_GET['page']) ? intval(mysql_real_escape_string($_GET['page'])) * 10 :  "";
 
-$query = "SELECT R.name, R.comment, R.rating, R.price, P.name AS profile, P.id AS pId 
+$query = "SELECT V.name, R.comment, R.rating, R.price, P.name AS profile, P.id AS pId 
 FROM Profiles P
    JOIN Reviews R ON P.id = R.userId
    JOIN Restaurants V ON V.id = R.restId
-   WHERE R.id = '$restId'
-   LIMIT ($page * 10), 10  
+   WHERE V.id = '$restId'
+   LIMIT $page, 10  
 ;";
 
 

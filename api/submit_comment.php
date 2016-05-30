@@ -3,7 +3,7 @@
 // Include confi.php
 include_once('confi.php');
 
-$email = isset($_POST['email']) ? mysql_real_escape_string($_POST['email']) :  "";
+$email = isset($_POST['email']) ? mysql_real_escape_string($_POST['email']) :  NULL;
 $restaurant = isset($_POST['restaurant']) ? mysql_real_escape_string($_POST['restaurant']) :  "";
 $comment = isset($_POST['comment']) ? mysql_real_escape_string($_POST['comment']) :  NULL;
 $price = isset($_POST['price']) ? mysql_real_escape_string($_POST['price']) :  NULL;
@@ -11,21 +11,30 @@ $rating = isset($_POST['rating']) ? mysql_real_escape_string($_POST['rating']) :
 
 if (!is_null($price) || !is_null($rating) || !is_null($comment)) {
 
-   $query = "SELECT id FROM Profiles WHERE email = '$email';";
-   $userID = mysql_result($query, 0)
+   if (!is_null($email)) {
+      $query = "SELECT id FROM Profiles WHERE email = '$email';";
+      $result = mysql_query($query);
+      $userID = mysql_result($result, 0);
+   }
+   //submit as guest
+   else {
+      $userID = 1;
+   }
+
    $query = "SELECT id FROM Restaurants WHERE name = '$restaurant';";
-   $restID = mysql_result($query, 0)
+   $result = mysql_query($query);
+   $restID = mysql_result($result, 0);
 
 
    // Insert data into data base
-   $sql = "INSERT INTO reviews VALUES (NULL, '$userID', '$restID', '$comment', '$price', '$rating');";
+   $sql = "INSERT INTO reviews VALUES ('$userID', '$restID', '$comment', '$price', '$rating');";
    $qur = mysql_query($sql);
          
    if ($qur) {
       $json = array("status" => 1, "msg" => "Comment added!");
    }
    else {
-      $json = array("status" => 0, "msg" => "Error adding comment4!");
+      $json = array("status" => 0, "msg" => "Error adding comment!");
    }
 }
 else {

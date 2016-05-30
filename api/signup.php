@@ -2,6 +2,7 @@
 //Requested URL : http://localhost/SLO_Hungry/api/signup.php
 // Include confi.php
 include_once('confi.php');
+header('Access-Control-Allow-Origin: *');
  
 // Get data
 $name = isset($_POST['name']) ? mysql_real_escape_string($_POST['name']) :  "";
@@ -21,7 +22,9 @@ if (!empty($name) && !empty($email) && !empty($goodpass)) {
       $qur = mysql_query($sql);
          
       if ($qur) {
-         $json = array("status" => 1, "msg" => "Done User added!");
+         $sql = "SELECT id FROM profiles WHERE email = '$email';";
+         $result = mysql_query($sql);
+         $json = array("status" => 1, "msg" => "Done User added!", 'id' => mysql_result($result, 0));
       }
       else {
          $json = array("status" => 0, "msg" => "Error adding user!");

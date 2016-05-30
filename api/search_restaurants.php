@@ -7,7 +7,7 @@ include_once('confi.php');
 
 $food = isset($_GET['food']) ? mysql_real_escape_string($_GET['food']) :  "";
 $filter = isset($_GET['filter']) ? mysql_real_escape_string($_GET['filter']) :  "";
-$page = isset($_GET['page']) ? intval(mysql_real_escape_string($_GET['page'])) :  "";
+$page = isset($_GET['page']) ? intval(mysql_real_escape_string($_GET['page'])) * 10 :  "";
 
 if (strcmp($filter, 'hi') == 0) {
    $query = "SELECT R.name, R.image, AVG(V.price) AS price, AVG(V.rating) AS rating, COUNT(*) AS numRatings
@@ -18,7 +18,7 @@ if (strcmp($filter, 'hi') == 0) {
       WHERE food = '$food'
       GROUP BY R.id
       ORDER BY AVG(V.price) DESC
-      LIMIT ($page * 10), 10
+      LIMIT $page, 10
    ;
    ";
 }
@@ -31,7 +31,7 @@ else if (strcmp($filter, 'lo') == 0) {
       WHERE food = '$food'
       GROUP BY R.id
       ORDER BY AVG(V.price)
-      LIMIT ($page * 10), 10
+      LIMIT $page, 10
    ;
    ";
 }
@@ -44,7 +44,7 @@ else if (strcmp($filter, 'rating') == 0) {
       WHERE food = '$food'
       GROUP BY R.id
       ORDER BY AVG(V.rating) DESC
-      LIMIT ($page * 10), 10
+      LIMIT $page, 10
    ;
    ";
 }
@@ -56,7 +56,7 @@ else {
       JOIN Reviews V ON R.id = V.restId
       WHERE food = '$food'
       GROUP BY R.id
-      LIMIT ($page * 10), 10
+      LIMIT $page, 10
    ;
    ";
 }

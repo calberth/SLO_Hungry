@@ -5,14 +5,14 @@
 include_once('confi.php');
 
 $email = isset($_GET['email']) ? mysql_real_escape_string($_GET['email']) :  "";
-$page = isset($_GET['page']) ? intval(mysql_real_escape_string($_GET['page'])) :  "";
+$page = isset($_GET['page']) ? intval(mysql_real_escape_string($_GET['page'])) * 10 :  "";
 
 
 $query = "SELECT R.name FROM Profiles P
    JOIN Favorites F ON P.id = F.userID
    JOIN Restaurants R ON R.id = F.restaurantId
    WHERE P.email = '$email'
-   LIMIT ($page * 10), 10
+   LIMIT $page, 10
 ;
 ";
 
