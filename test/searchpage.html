@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.overlay {
+	border: 3px solid;
+	border-color:#248F24;
+	background-color:white;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom:5px;
+	border-radius: 25px 26px;
+}
+
+body {
+	background: url(test3.jpg);
+	background-size:cover;
+	background-repeat:repeat;
+}
+
+h1 {
+	text-align:center;
+	color:#248F24;
+	font-family: "Ariel Black", Gadget, sans-seriff;
+	text-decoration:bold;
+}
+
+h2 {
+	text-align:center;
+	color:#248F24;
+	font-family: "Ariel Black", Gadget, sans-seriff;
+}
+
+h3 {
+        text-align:center;
+	color:#248F24;
+	font-family: "Ariel Black", Gadget, sans-seriff;
+}
+
+.profile {
+	text-align:right;
+	margin: auto 5px;
+	color:#248F24;
+	font-family: "Ariel Black", Gadget, sans-seriff;
+}
+
+.dropbtn {
+        background-color: #D1EEEE;
+        color: black;
+        padding: 14px;
+        font-size: 14px;
+        border: none;
+        width: 470px;
+        cursor: pointer;
+	text-align:center;
+	margin:0 50%;
+}
+
+.dropdown {
+        position: relative;
+        display: inline-block;
+}
+
+.dropdown-content {
+        display: none;
+        position: relative;
+        background-color: #D1EEEE;
+        min-width: 480px;
+        box-shadow: none;
+	margin:0 50%;
+	max-height: 170px;
+	overflow-y:auto;
+}
+
+.dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display:block;
+}
+
+.dropdown-content a:hover {background-color: #EBEBEB;}
+
+.show {display:block;}
+</style>
+</head>
+<body>
+<div class = "overlay">
+	<div class="profile">
+        	<h4><a href=./profile.html> View my profile </a></h4>
+	</div>
+
+	<h1>I'M SLO HUNGRY</h1>
+	<h2>FOR</h2>
+	<div class="dropdown">
+	<button onclick="myFunction()" class="dropbtn">Choose Category</button>
+		<div id="myDropdown" class="dropdown-content">
+			<a href="#">American</a>
+                	<a href="#">BBQ</a>
+                	<a href="#">Burgers</a>
+                	<a href="#">Cafes</a>
+                	<a href="#">Chinese</a>
+                	<a href="#">Fast Food</a>
+                	<a href="#">Gluten Free</a>
+                	<a href="#">Greek</a>
+                	<a href="#">Indian</a>
+                	<a href="#">Japanese</a>
+                	<a href="#">Mexican</a>
+                	<a href="#">Pizza</a>
+                	<a href="#">Sushi</a>
+               		<a href="#">Thai</a>
+                	<a href="#">IDGAF I have the munchies!!</a>
+		</div>
+	</div>
+
+
+	<h2>OR</h2>
+	<form><h3>
+		Search by name
+		<input id="search" type="text" name="category" size="40">
+	</h3></form>
+</div>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
+
