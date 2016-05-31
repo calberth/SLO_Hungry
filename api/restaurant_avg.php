@@ -1,19 +1,23 @@
 <?php
-//Requested URL : http://localhost/SLO_Hungry/api/restaurant_avg.php?restaurant=[restaurant]
+//Requested URL : http://localhost/SLO_Hungry/api/restaurant_avg.php
 // Include confi.php
 include_once('confi.php');
 
-$restaurant = isset($_POST['restaurant']) ? mysql_real_escape_string($_POST['restaurant']) :  "";;
+$rId = isset($_POST['rId']) ? mysql_real_escape_string($_POST['rId']) :  "";;
 
-$query = "SELECT AVG(rating) FROM restaurants R
+$query = "SELECT AVG(V.rating) AS rating, COUNT(*) AS count FROM restaurants R
    JOIN reviews V ON R.id = V.restId
-   WHERE R.name = '$restaurant'
+   WHERE R.id = '$rId'
 ;
 ";
 
 $result = mysql_query($query);
 
-$json = array("status" => 1, "msg" => mysql_result($result, 0));
+$json = array('status' => 0);
+
+while ($row = mysql_fetch_assoc($result)) {
+   $json = array('rating' => $row['rating'], 'count' => $row['count']);
+}
 
 @mysql_close($conn);
  

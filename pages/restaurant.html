@@ -1,0 +1,82 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../style/style.css" />
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+   <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+   <script type="text/javascript" src = "scripts/restaurantPage.js" /></script>
+</head>
+<body>
+
+<div class = "info_page_container">
+<div class= "bigImage">
+	<image src = "../images/restaurants/firestone.jpg" style = "width: inherit; height: inherit">
+</div>
+<div class = "info_box">
+	<h1 id = 'restName'></h1>
+	<ul style="list-style-type:none">	
+		<li id="location"></li> 
+		<li id ="phoneNum"></li>
+		<li id ="website"></li>
+		<li id ="hours"></li>
+	</ul>
+</div>
+
+<div class = "rating_box">
+	<p id="rating"></p>
+	<p id = "price">Price: $$$</p>
+</div>
+
+<div class = "reviews">
+	<div id = "submit">
+		<div class = "left">
+			<h3 id="submitHeader">Submit Review</h3>
+			<textarea id = "comment">Write Review</textarea>
+		</div>
+		<div class = "select">
+			<B>Select a Price:</B> <BR>
+			<SELECT id="Price">
+			<OPTION value = 0 SELECTED> 
+			<OPTION value = 1> 1 (cheapest)
+			<OPTION value = 2> 2
+			<OPTION value = 3> 3
+			<OPTION value = 4> 4	
+			<OPTION value = 5> 5 (priciest)
+			</SELECT>
+			<br> <B>Select a Rating:</B> <br>
+			<SELECT id="Rating">
+			<OPTION value = 0 SELECTED> 
+			<OPTION value = 1> 1 (worst)
+			<OPTION value = 2> 2
+			<OPTION value = 3> 3
+			<OPTION value = 4> 4	
+			<OPTION value = 5> 5 (best)
+			</SELECT>
+		</div>
+		<div class ="submit_button">
+			<p> 
+          <input type="button" id = "submit_button" value="Submit"/> 
+        </p>
+		</div>
+	</div>
+
+
+	<h3 id="reviewsheader">User Reviews</h3>
+	<div class = "restaurant_holder">
+		<div class = "user_image">
+			<image src="../images/users/obama.jpg" style ="height:inherit; width:inherit;">
+		</div>
+		<div class = "details">
+			<h3>Barack Obama</h3>
+			<p style="font-style:italic">"Pretty good tri tip!"</p>
+		</div>
+		<div class = "ratings">
+			<h4>Rating: 5/5</h4>
+		</div>
+	</div>
+</div>
+
+</div>
+
+
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 —- columns : fId, type
 
-INSERT INTO FOODS VALUES
+INSERT INTO FOOD VALUES
 	(1, 'Barbecue'), 
 	(2, 'Delis'), 
 	(3, 'Seafood'), 

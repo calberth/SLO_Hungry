@@ -1,11 +1,11 @@
 <?php
-//Requested URL : http://localhost/SLO_Hungry/api/get_rest_comments?rId=[restId]&page=[page]
- //Returns only 10 favorites per page
+//Requested URL : http://localhost/SLO_Hungry/api/get_rest_comments
+//Returns only 10 favorites per page
 // Include confi.php
 include_once('confi.php');
 
-$restId = isset($_GET['rId']) ? mysql_real_escape_string($_GET['rId']) :  "";
-$page = isset($_GET['page']) ? intval(mysql_real_escape_string($_GET['page'])) * 10 :  "";
+$restId = isset($_POST['rId']) ? mysql_real_escape_string($_POST['rId']) :  "";
+$page = isset($_POST['page']) ? intval(mysql_real_escape_string($_POST['page'])) * 10 :  "";
 
 $query = "SELECT V.name, R.comment, R.rating, R.price, P.name AS profile, P.id AS pId 
 FROM Profiles P

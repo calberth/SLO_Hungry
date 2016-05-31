@@ -3,15 +3,19 @@
 // Include confi.php
 include_once('confi.php');
 
-$restaurant = isset($_POST['restaurant']) ? mysql_real_escape_string($_POST['restaurant']) :  "";
+$rId = isset($_POST['rId']) ? mysql_real_escape_string($_POST['rId']) :  "";
 
-$query = "SELECT AVG(price) FROM restaurants R
+$query = "SELECT AVG(price) AS price FROM restaurants R
    JOIN reviews V ON R.id = V.restId
-   WHERE R.name = '$restaurant'
+   WHERE R.id = '$rId'
 ;
 ";
 
 $result = mysql_query($query);
+
+while ($row = mysql_fetch_assoc($result)) {
+   $json = array('price' => $row['price']);
+}
 
 $json = array("status" => 1, "msg" => mysql_result($result, 0));
 
