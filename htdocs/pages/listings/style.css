@@ -1,0 +1,14 @@
+body {
+	font-color:red;
+	background-color: yellow;
+	font-size: 30px;
+}
+
+h1 {
+	font-size: 12px;
+	font-family: sans-serif;
+}
+
+.restaurant_holder {
+	border-width: 2px;
+}

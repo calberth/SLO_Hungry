@@ -7,6 +7,7 @@ body {
 
 h1 {
 	margin: 0 0 0 0;
+	text-align: center;
 }
 
 h2 {
@@ -49,6 +50,7 @@ button:hover {
 }
 
 .restaurant_holder {
+	margin-top: 10px;
 	position: relative;
 	padding: 2px;
 	border:1px black solid;
@@ -96,9 +98,9 @@ button:hover {
 
 .info_box {
 	position: absolute;
-    width: 350px;
+    width: 450px;
     margin-left: 620px;
-    height: 400px;
+    height: 500px;
     
     border: 1px solid black;
 }
@@ -111,7 +113,7 @@ button:hover {
 
 .reviews {
 	position: absolute;
-    margin-top: 400px;
+    margin-top: 500px;
     width: 1000px;
 }
 
@@ -119,4 +121,20 @@ button:hover {
 	position: absolute;
 	height: inherit;
 	width: 200px;
+}
+
+.comment_box {
+	width: 700px;
+    height: 100px;
+}
+
+.review_button {
+	margin-left: 25px;
+    margin-top: 75px;
+    position: absolute;
+    border-radius: 25px;
+}
+
+#user_box {
+	margin-top: 10px;
 }
