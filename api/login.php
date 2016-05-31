@@ -1,5 +1,5 @@
 <?php
-//Requested URL : http://localhost/SLO_Hungry/api/login.php?email=[email]&pass=[pass]
+//Requested URL : http://localhost/SLO_Hungry/api/login.php
 // Include confi.php
 include_once('confi.php');
 
