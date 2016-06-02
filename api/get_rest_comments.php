@@ -12,6 +12,16 @@ FROM Profiles P
    JOIN Reviews R ON P.id = R.userId
    JOIN Restaurants V ON V.id = R.restId
    WHERE V.id = '$restId'
+;";
+$result = mysql_query($query);
+$count = mysql_num_rows($result);
+
+$query = "SELECT V.name, R.comment, R.rating, R.price, P.name AS profile, P.id AS pId 
+FROM Profiles P
+   JOIN Reviews R ON P.id = R.userId
+   JOIN Restaurants V ON V.id = R.restId
+   WHERE V.id = '$restId'
+   ORDER BY timestamp DESC
    LIMIT $page, 10  
 ;";
 
@@ -21,9 +31,10 @@ $result = mysql_query($query);
 $json = array();
 if (mysql_num_rows($result) != 0) {
    $json['status'] = 1;
+   $json['count'] = $count;
    $comments = array();
    while ($row = mysql_fetch_assoc($result)) {
-      array_push($comments, array('name' => $row['name'], 'comment' => $row['comment'], 'price' => $row['price'],
+      array_push($comments, array('comment' => $row['comment'], 'price' => $row['price'],
        'rating' => $row['rating'], 'userName' => $row['profile'], 'pId' => $row['pId']));
    }
    $json["comments"] = $comments;

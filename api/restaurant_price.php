@@ -17,7 +17,7 @@ while ($row = mysql_fetch_assoc($result)) {
    $json = array('price' => $row['price']);
 }
 
-$json = array("status" => 1, "msg" => mysql_result($result, 0));
+$json = array("status" => 1, "price" => mysql_result($result, 0));
 
 @mysql_close($conn);
  

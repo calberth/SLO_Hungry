@@ -8,9 +8,8 @@ $(document).ready(function(){
          {email: email,
          pass: pass + email},
          function(data) {
-            if (data.status == 1) {
-               var uId = data.uId
-               alert("login success " + uId)
+            if (data.status == 1) { 
+               window.location.href = "http://localhost:8080/SLO_Hungry/pages/searchpage.html#" + data.uId
             }
             else {
                alert("Invalid Username or Password");

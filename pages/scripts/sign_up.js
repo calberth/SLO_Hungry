@@ -21,7 +21,7 @@ $(document).ready(function(){
             pass: pass1 + email},
             function(data) {
                if (data.status == 1) {
-                  alert("uId: " + data.id);
+                  window.location.href = "http://localhost:8080/SLO_Hungry/pages/searchpage.html#" + data.id
                }
                else if (data.msg == "Email already taken") {
                   $("#emailWarning").show();

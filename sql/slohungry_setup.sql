@@ -36,7 +36,8 @@ CREATE TABLE IF NOT EXISTS Reviews (
    restId INT REFERENCES Restuarants(id),
    comment VARCHAR(564),
    price FLOAT,
-   rating FLOAT
+   rating FLOAT,
+   timestamp DATETIME
 );
 
 CREATE TABLE IF NOT EXISTS FoodRestaurants (

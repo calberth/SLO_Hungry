@@ -16,7 +16,7 @@ if (mysql_num_rows($result) == 1) {
    while ($row = mysql_fetch_assoc($result)) {
       $json = array('id' => $row['id'], "name" => $row['name'], "location" => $row['location'], "hours" => $row['hours'],
        "image" => $row['image'], "website" => $row['website'], "phone" => $row['phone'], 'rating' => $row['rating'],
-       "status" => 1);
+       "status" => 1, "long" => $row['longitude'], "lat" => $row['latitude']);
    }
 }
 else {

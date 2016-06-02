@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	    <link type="text/css" rel="stylesheet" href="../style/homepage_style.css"/>
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
       <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
       <script type="text/javascript" src = "scripts/login.js" /></script>
+	        <type>
 		<title>WELCOME TO SLO HUNGRY</title>
 	</head>
 	<body>
+  <h2>WELCOME TO SLO HUNGRY!</h2>
 	<div id = "login" class="login">
       <h1>Login to Account</h1>
-      <form method="post" action="index.html">
-        <p><input id = "email" type="text" value="" placeholder="Email"></p>
-        <p><input id = "password" type="password" value="" placeholder="Password"></p>
-        <p class="submit"><input id = "loginbutton" type="button" value="Login"></p>
+      <form autocomplete="on">
+        <p><input id = "email" type="text" name="login" value="" placeholder="Email" required="required"></p>
+        <p><input id = "password" type="password" name="password" value="" placeholder="Password" required="required"></p>
+        <p><button type='button' id = "loginbutton">Login</button></p>
       </form>
     </div>
-    <div class="dont have account">
-    	<p>Don't have an account?  <a href="http://localhost:8080/SLO_Hungry/pages/signup.html">Sign up here</a>.</p>
-    </div>
-    <div class="guest">
-    	<p>CONTINUE AS  <a href="http://localhost:8080/SLO_Hungry/pages/featured.html#uid=1">GUEST</a>.</p>
+    <div class="noa">
+    	<p>Don't have an account?  <a href="http://localhost:8080/SLO_Hungry/pages/signup.html">Sign up here</a>.   OR   Continue as <a href="http://localhost:8080/SLO_Hungry/pages/searchpage.html#1">GUEST</a>.</p>
     </div>
 	</body>
 </html>

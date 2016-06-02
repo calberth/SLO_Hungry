@@ -1,0 +1,38 @@
+#register{
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 450px;
+    width: 30%;
+    border: 3px solid #73AD21;
+    border-radius: 25px;
+    padding: 10px;
+    text-align: center;
+    border-color: #248f24; 
+    background-color: #FFFFFF;
+}
+
+body{
+    background: url(test3.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+
+h1{
+	color: #248f24;
+	font-weight: bold; 
+	font-family: "Arial Black", Gadget, sans-serif;
+	text-align: center;
+}
+
+#sign_up{
+    position: absolute;
+    background-color: white;
+    width: 110%;
+    margin-left: -60px;
+    margin-right: -60px;
+    height: 405px;
+    margin-top: -30px;
+    background-image: url(slo_background.jpg)
+}
+

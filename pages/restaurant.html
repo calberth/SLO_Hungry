@@ -1,15 +1,16 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="../style/style.css" />
+	<link rel="stylesheet" type="text/css" href="../style/restaurantPage.css" />
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
    <script type="text/javascript" src = "scripts/restaurantPage.js" /></script>
+   <script src="http://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 </head>
 <body>
 
 <div class = "info_page_container">
 <div class= "bigImage">
-	<image src = "../images/restaurants/firestone.jpg" style = "width: inherit; height: inherit">
+	<image id = "mainImage" style = "width: inherit; height: inherit">
 </div>
 <div class = "info_box">
 	<h1 id = 'restName'></h1>
@@ -19,6 +20,7 @@
 		<li id ="website"></li>
 		<li id ="hours"></li>
 	</ul>
+	<div id="map" style="width:100%;height:100%;"></div>
 </div>
 
 <div class = "rating_box">
@@ -62,15 +64,20 @@
 
 	<h3 id="reviewsheader">User Reviews</h3>
 	<div class = "restaurant_holder">
-		<div class = "user_image">
-			<image src="../images/users/obama.jpg" style ="height:inherit; width:inherit;">
-		</div>
-		<div class = "details">
-			<h3>Barack Obama</h3>
-			<p style="font-style:italic">"Pretty good tri tip!"</p>
-		</div>
-		<div class = "ratings">
-			<h4>Rating: 5/5</h4>
+		<table id = "comments" border="1">
+			<thead>
+				<tr>
+					<th>User</th>
+					<th>Comment</th>
+					<th>Price</th>
+					<th>Rating</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+		<div>
+			<button id="prevComment">Previous</button>
+			<button id="nextComment">Next</button>
 		</div>
 	</div>
 </div>
