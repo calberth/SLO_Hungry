@@ -146,7 +146,7 @@ function loadComments(rid, page) {
             var comment = row.insertCell(1);
             var price = row.insertCell(2);
             var rating = row.insertCell(3);
-            name.innerHTML = review.userName;
+            name.innerHTML = '<a href="http://localhost:8080/SLO_Hungry/pages/profile.html#'+review.pId+'">'+review.userName+'</a>';
             comment.innerHTML = review.comment;
             price.innerHTML = review.price;
             rating.innerHTML = review.rating;

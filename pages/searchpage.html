@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+   <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+   <script type="text/javascript" src = "scripts/searchpage.js" /></script>
 <head>
 <style>
 
@@ -89,7 +92,7 @@ h3 {
 <body>
 <div class = "overlay">
 	<div class="profile">
-        	<h4><a href=./profile.html> View my profile </a></h4>
+        	<h4><a id = "profile"> View my profile </a></h4>
 	</div>
 
 	<h1>I'M SLO HUNGRY</h1>
@@ -97,21 +100,23 @@ h3 {
 	<div class="dropdown">
 	<button onclick="myFunction()" class="dropbtn">Choose Category</button>
 		<div id="myDropdown" class="dropdown-content">
-			<a href="#">American</a>
-                	<a href="#">BBQ</a>
-                	<a href="#">Burgers</a>
-                	<a href="#">Cafes</a>
-                	<a href="#">Chinese</a>
-                	<a href="#">Fast Food</a>
-                	<a href="#">Gluten Free</a>
-                	<a href="#">Greek</a>
-                	<a href="#">Indian</a>
-                	<a href="#">Japanese</a>
-                	<a href="#">Mexican</a>
-                	<a href="#">Pizza</a>
-                	<a href="#">Sushi</a>
-               		<a href="#">Thai</a>
-                	<a href="#">IDGAF I have the munchies!!</a>
+			<a id = "Barbecue" href="#">Barbecue</a>
+            <a id ="Delis" href="#">Delis</a>
+            <a id = "Seafood" href="#">Seafood</a>
+            <a id = "Italian" href="#">Italian</a>
+        	<a id = "Southern" href="#">Southern</a>
+            <a id = "Sushi" href="#">Sushi</a>
+        	<a id ="Salad" href="#">Salad</a>
+            <a id = "Burgers" href="#">Burgers</a>
+            <a id = "Gluten-Free" href="#">Gluten-Free</a>
+        	<a id = "Greek" href="#">Greek</a>
+            <a id = "Indian" href="#">Indian</a>
+        	<a id = "Japanese" href="#">Japanese</a>
+            <a id = "Mexican" href="#">Mexican</a>
+       		<a id = "Pizza" href="#">Pizza</a>
+            <a id = "Thai" href="#">Thai</a>
+            <a id = "American" href="#">American</a>
+            <a id = "Random" href="#">IDGAF I have the munchies!!</a>
 		</div>
 	</div>
 
@@ -120,7 +125,9 @@ h3 {
 	<form><h3>
 		Search by name
 		<input id="search" type="text" name="category" size="40">
-	</h3></form>
+        <input type="button" id = "search_button" value="Search"/> 
+	</h3>
+    </form>
 </div>
 
 <script>

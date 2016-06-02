@@ -1,6 +1,5 @@
 .login{ 
-    margin-top: 50px;
-    margin-left: 400px;
+    margin: auto;
     width: 30%;
     border: 3px solid #73AD21;
     border-radius: 25px;
@@ -11,9 +10,9 @@
 }
 
 body{
-    background: url(slo_background.jpg), url(test3.jpg);
+    background: url(../images/slo_background.jpg), url(../images/test3.jpg);
     background-size: cover, cover;
-    background-repeat: no-repeat, repeat;
+    background-repeat: no-repeat, repeat; 
 }
 
 h1{
@@ -32,13 +31,11 @@ h2{
 }
 
 .noa{
-    position:absolute;
-    margin-top: 65px;
-    margin-left: 325px;
+    margin: auto;
     color: white;
     font-family: "Arial Black", Gadget, sans-serif;
     text-align: center; 
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 a{

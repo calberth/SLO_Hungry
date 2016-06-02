@@ -6,9 +6,9 @@ include_once('confi.php');
 
 $restaurant = isset($_POST['restaurant']) ? mysql_real_escape_string($_POST['restaurant']) :  "";
 
-$query = 'SELECT * FROM Restaurants
+$query = "SELECT * FROM Restaurants
    WHERE name = '$restaurant'
-;';
+;";
 
 $result = mysql_query($query);
 
