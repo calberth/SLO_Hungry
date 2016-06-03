@@ -32,6 +32,11 @@ $(document).ready(function(){
    var rid = parseInt(urlInfo[0].replace("#", ""));
    var uid = parseInt(urlInfo[1]);
    var commentspage = 0;
+
+   if (urlInfo.length != 2) {
+      window.location.href = "http://localhost:8080/SLO_Hungry/pages/searchpage.html#1";
+   }
+
    $("#prevComment").hide();
    $("#nextComment").hide();
    $("#inFav").hide();

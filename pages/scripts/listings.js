@@ -9,8 +9,7 @@ $(document).ready(function(){
    $("#nextComment").hide(); 
 
    if (urlInfo[0] === "") {
-      fid = getRandomInt(1,16);
-      uid = 1;
+      window.location.href = "http://localhost:8080/SLO_Hungry/pages/searchpage.html#1";
    }
    else if (urlInfo.length == 1) {
       fid = parseInt(urlInfo[0].replace("#", ""));
