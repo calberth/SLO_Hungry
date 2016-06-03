@@ -167,3 +167,7 @@ button:hover {
   float: right;
   margin-right: 100px;
 }
+
+#fav_button {
+  margin-left: 10px;
+}

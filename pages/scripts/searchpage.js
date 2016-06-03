@@ -1,6 +1,17 @@
 $(document).ready(function(){
    var urlInfo = window.location.hash.split('&');
-   var uid = parseInt(urlInfo[0].replace("#", ""));
+   var uid;
+
+   if (urlInfo[0] === ""){
+      uid = 1;
+   }
+   else {
+      uid = parseInt(urlInfo[0].replace("#", ""));
+   }
+
+   if (uid == 1) {
+      $("#profile").hide();
+   }
 
    document.getElementById("profile").href = "http://localhost:8080/SLO_Hungry/pages/profile.html#" + uid;
    document.getElementById("Barbecue").href = "http://localhost:8080/SLO_Hungry/pages/listings.html#" + uid +"&" + 1;

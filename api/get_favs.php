@@ -1,17 +1,17 @@
 <?php
-//Requested URL : http://localhost/SLO_Hungry/api/user_favs?user=[email]&page=[#]   
+//Requested URL : http://localhost/SLO_Hungry/api/user_favs.php
 //Returns only 10 favorites per page
 // Include confi.php
 include_once('confi.php');
 
-$email = isset($_GET['email']) ? mysql_real_escape_string($_GET['email']) :  "";
-$page = isset($_GET['page']) ? intval(mysql_real_escape_string($_GET['page'])) * 10 :  "";
+$id = isset($_POST['uid']) ? mysql_real_escape_string($_POST['uid']) :  "";
+$page = isset($_POST['page']) ? intval(mysql_real_escape_string($_POST['page'])) * 10 :  "";
 
 
 $query = "SELECT R.name FROM Profiles P
    JOIN Favorites F ON P.id = F.userID
    JOIN Restaurants R ON R.id = F.restaurantId
-   WHERE P.email = '$email'
+   WHERE P.id = '$id'
    LIMIT $page, 10
 ;
 ";

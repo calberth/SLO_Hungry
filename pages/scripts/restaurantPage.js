@@ -30,9 +30,30 @@ function initMap() {
 $(document).ready(function(){
    var urlInfo = window.location.hash.split('&');
    var rid = parseInt(urlInfo[0].replace("#", ""));
+   var uid = parseInt(urlInfo[1]);
    var commentspage = 0;
    $("#prevComment").hide();
    $("#nextComment").hide();
+   $("#inFav").hide();
+
+   if (uid == 1) {
+      $("#fav_button").hide();
+   }
+   else {
+      $.post("http://localhost:8080/SLO_Hungry/api/check_in_favs.php",
+         {rid: rid,
+          uid: uid
+         },
+         function(data) {
+            if (data.count != 0) {
+               $("#fav_button").hide();
+               $("#inFav").show();
+            }
+         },
+         'json'
+      );
+   }
+
 
    $.post("http://localhost:8080/SLO_Hungry/api/restaurant_price.php",
       {rId: rid},
@@ -56,10 +77,20 @@ $(document).ready(function(){
       loadComments(rid, commentspage);
    });
 
+   $.post("http://localhost:8080/SLO_Hungry/api/restaurant_price.php",
+      {rId: rid},
+      function(data) {
+         var price = "";
+         for (i = 0; i < Math.round(data.price); i++) {
+            price = price + "$";
+         }
+         document.getElementById('price').innerHTML = "Price: " + price;
+      },
+      'json'
+   );
 
    $("#submit_button").click(function() {
       var urlInfo = window.location.hash.split('&');
-      var uid = parseInt(urlInfo[1]);
       var comment = $('#comment').val();
       var price = document.getElementById("Price");
       var rating = document.getElementById("Rating");
@@ -96,6 +127,25 @@ $(document).ready(function(){
          'json'
       );
 
+   });
+
+
+   $("#fav_button").click(function() {
+      $.post("http://localhost:8080/SLO_Hungry/api/fav_rest.php",
+         {rid: rid,
+          uid: uid
+         },
+         function(data) {
+            if (data.status == 1) {
+               $("#fav_button").hide();
+               $("#inFav").show();
+            }
+            else {
+               alert("failed to add to favorites");
+            }
+         },
+         'json'
+      );
    });
 
    loadComments(rid, commentspage);   
