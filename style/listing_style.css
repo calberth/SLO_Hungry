@@ -10,6 +10,10 @@ h1 {
 	text-align: center;
 }
 
+tbody tr {
+   height: 100;
+}
+
 h2 {
 	text-align: center;
 }
@@ -42,6 +46,10 @@ button:hover {
 	background-color:#A2BC13; 
 }
 
+image {
+   background-size: contain;
+}
+
 .container {
 	position: relative;
 	height: 90%;
@@ -53,7 +61,6 @@ button:hover {
 	margin-top: 10px;
 	position: relative;
 	padding: 2px;
-	border:1px black solid;
 	height: 150px;
 	width: 700px;
 }
@@ -137,4 +144,10 @@ button:hover {
 
 #user_box {
 	margin-top: 10px;
+}
+
+.imageContainer {
+   overflow: hidden;
+   height: 250px;
+   width: 250px;
 }

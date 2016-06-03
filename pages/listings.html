@@ -1,56 +1,30 @@
 
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="../style/listing_style.css" />
+	<link rel="stylesheet" type="text/css" href="../style/listing_style.css" />
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+   <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+   <script type="text/javascript" src = "scripts/listings.js" /></script>
 </head>
 
 <body>
 <h2>Restaurants in San Luis Obispo</h2>
-<div class = "container">
 <div class = "restaurant_holder">
-	<div class = "restaurant_holder">
-		<table id = "results" border="1">
-			<thead>
-				<tr>
-					<th></th>
-					<th>Name</th>
-					<th>Price</th>
-					<th>Avg Rating</th>
-					<th>Num of Ratings</th>
-				</tr>
-			</thead>
-			<tbody></tbody>
-		</table>
-		<div>
-			<button id="prevComment">Previous</button>
-			<button id="nextComment">Next</button>
-		</div>
-	</div>
-
-	<div class = "restaurant_image">
-		<image src="../../images/restaurants/firestone.jpg" style ="height:inherit; width:inherit;">
-	</div>
-	<div class = "details">
-		<h3>Firestone</h3>
-		<p style="font-style:italic">"Best fucking place ever!" - like everyone</p>
-	</div>
-	<div class = "ratings">
-		<h4>Rating: 5/5</h4>
-		<a href = "../restaurant/restaurant.php">More about Firestone</a>
-	</div>
-</div>
-
- <div class = "restaurant_holder">
-	<div class = "restaurant_image">
-		<image src="../../images/restaurants/motav.jpg" style ="height:inherit; width:inherit;">
-	</div>
-	<div class = "details">
-		<h3>Mother's Tavern</h3>
-		<p style="font-style:italic">"Sure, I'd love to pay the cover charge" - that one dab</p>
-	</div>
-	<div class = "ratings">
-		<h4>Rating: 4/5</h4>
-		<a href = "../restaurant/restaurant.php">More about Motav (but actually firestone)</a>
+	<table id = "results" border="1">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Avg Rating</th>
+				<th>Num of Ratings</th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+	<div>
+		<button id="prevComment">Previous</button>
+		<button id="nextComment">Next</button>
 	</div>
 </div> 
 
