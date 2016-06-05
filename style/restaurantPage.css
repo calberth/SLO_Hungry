@@ -1,7 +1,7 @@
 
 body {
    color:#FF7722; /*obviously just placeholder colors for now*/
-   background-color: #EEE9E9;
+   background-color: url(../images/test3.jpg);
    font-family: sans-serif;
 }
 
@@ -62,7 +62,10 @@ button:hover {
    position: relative;
    padding: 2px;
    overflow: hidden;
-   border:1px black solid;
+   border: 3px solid #73AD21;
+   background-color: white;
+   border-color: #248f24;
+   border-radius: 25px;
    height: 100%;
    width: 700px;
 }
