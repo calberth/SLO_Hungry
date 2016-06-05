@@ -24,7 +24,10 @@ if (!empty($name) && !empty($email) && !empty($goodpass)) {
       if ($qur) {
          $sql = "SELECT id FROM profiles WHERE email = '$email';";
          $result = mysql_query($sql);
-         $json = array("status" => 1, "msg" => "Done User added!", 'id' => mysql_result($result, 0));
+         $uid = mysql_result($result, 0);
+         $json = array("status" => 1, "msg" => "Done User added!", 'id' => $uid);
+         session_start();
+         $_SESSION["uid"] = $uid;
       }
       else {
          $json = array("status" => 0, "msg" => "Error adding user!");

@@ -7,7 +7,19 @@ $(document).ready(function(){
    }
    else {
       uid = parseInt(urlInfo[0].replace("#", ""));
+
+      $.ajax({
+         url: "http://localhost:8080/SLO_Hungry/api/check_session.php",
+         async: false,
+         dataType: "json",
+         success: function(data){
+            if (data.uid != uid) {
+               uid = 1;
+            }
+         }
+      });
    }
+
 
    if (uid == 1) {
       $("#profile").hide();

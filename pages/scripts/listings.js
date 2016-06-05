@@ -18,6 +18,16 @@ $(document).ready(function(){
    else {
       uid = parseInt(urlInfo[0].replace("#", ""));
       fid = parseInt(urlInfo[1]);
+      $.ajax({
+         url: "http://localhost:8080/SLO_Hungry/api/check_session.php",
+         async: false,
+         dataType: "json",
+         success: function(data){
+            if (data.uid != uid) {
+               uid = 1;
+            }
+         }
+      });   
    }
 
    loadResults(fid, commentspage, uid);

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
 
+<style>
 .overlay {
 	border: 3px solid;
 	border-color:#248F24;
@@ -55,6 +55,11 @@ body {
 }
 
 </style>
+
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script type="text/javascript" src = "scripts/profile.js"></script>
+
 </head>
 
 <body>
@@ -64,8 +69,10 @@ body {
 			<image src="../images/shefali.jpg" style ="height:inherit; width:inherit;">
 		</div>
 		<div class="user_details">
-			<h1>SHEFALI SABOO</h1>
-			<h3><i># reviews: 400</i></h3>
+			<h1 id="user_name">[username]</h1>
+			<button>test</button> <!-- remove these later -->
+			<input id="test" type="text"/>
+			<h3 <i>Reviews: </i><i id="reviews"></i></h3>
 		</div>
 		<div class="user_favorites">
 			<h1>YOU LOVE</h1>
