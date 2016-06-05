@@ -37,6 +37,17 @@ $(document).ready(function(){
       window.location.href = "http://localhost:8080/SLO_Hungry/pages/searchpage.html#1";
    }
 
+   $.ajax({
+      url: "http://localhost:8080/SLO_Hungry/api/check_session.php",
+      async: false,
+      dataType: "json",
+      success: function(data){
+         if (data.uid != uid) {
+            uid = 1;
+         }
+      }
+   });
+   
    $("#prevComment").hide();
    $("#nextComment").hide();
    $("#inFav").hide();

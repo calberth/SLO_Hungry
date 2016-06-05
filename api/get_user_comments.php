@@ -1,23 +1,34 @@
 <?php
-//Requested URL : http://localhost/SLO_Hungry/api/get_user_comments?email=[email]&page=[email]
+//Requested URL : http://localhost/SLO_Hungry/api/get_user_comments.php
  //Returns only 10 favorites per page
 // Include confi.php
 include_once('confi.php');
 
-$email = isset($_GET['email']) ? mysql_real_escape_string($_GET['email']) :  "";
-$page = isset($_GET['page']) ? intval(mysql_real_escape_string($_GET['page'])) * 10 :  "";
+$uId = isset($_POST['uId']) ? intval(mysql_real_escape_string($_POST['uId'])) :  "";
+$page = isset($_POST['page']) ? intval(mysql_real_escape_string($_POST['page'])) * 10 :  "";
 
-$query = "SELECT v.name, R.comment, R.rating, R.price FROM Profiles P
+$json = array();
+
+$query = "SELECT COUNT(*) AS count FROM Profiles P
    JOIN Reviews R ON P.id = R.userId
    JOIN Restaurants V ON V.id = R.restId
-   WHERE email = '$email'
+   WHERE P.id = $uId
+;";
+
+$result = mysql_query($query);
+$row = mysql_fetch_assoc($result);
+$json["count"] = $row["count"];
+
+$query = "SELECT V.name, R.comment, R.rating, R.price FROM Profiles P
+   JOIN Reviews R ON P.id = R.userId
+   JOIN Restaurants V ON V.id = R.restId
+   WHERE P.id = $uId
    LIMIT $page, 10 
 ;";
 
 
 $result = mysql_query($query);
 
-$json = array();
 if (mysql_num_rows($result) != 0) {
    $json['status'] = 1;
    $comments = array();
@@ -52,7 +63,7 @@ if (mysql_num_rows($result) != 0) {
    $json["comments"] = $comments;
 }
 else {
-   $json = array("status" => 0, "msg" => "No Comments $page");
+   $json = array("status" => 0, "msg" => "No Comments $page  $uId");
 }
 
 @mysql_close($conn);
