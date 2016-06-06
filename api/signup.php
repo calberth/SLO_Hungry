@@ -2,7 +2,6 @@
 //Requested URL : http://localhost/SLO_Hungry/api/signup.php
 // Include confi.php
 include_once('confi.php');
-header('Access-Control-Allow-Origin: *');
  
 // Get data
 $name = isset($_POST['name']) ? mysql_real_escape_string($_POST['name']) :  "";
