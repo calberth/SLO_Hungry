@@ -1,21 +1,54 @@
 
 body {
-	color:#FF7722; /*obviously just placeholder colors for now*/
-	background-color: #EEE9E9;
+	background: url(../images/test3.jpg);
+    	background-size: cover;
+    	background-repeat: repeat;
 	font-family: sans-serif;
 }
 
+#name {
+	width: 250px;
+}
+
+#price {
+        width: 250px;
+}
+
+#avg {
+        width: 250px;
+}
+
+#num {
+        width: 250px;
+}
+
+table, th, td {
+	border: 3px solid #248F24;
+	border-collapse: collapse;
+}
+
+table {
+	width: 1250px;
+	border-radius: 25px 26px;
+}
+
+tbody tr{
+	height: 100;
+	background-color:white;
+	text-align: center;
+}
+
+thead tr {
+	background-color:white;
+}
+
+
 h1 {
-	margin: 0 0 0 0;
 	text-align: center;
-}
-
-tbody tr {
-   height: 100;
-}
-
-h2 {
-	text-align: center;
+	color: white;
+        font-weight: bold;
+        font-family: "Arial Black", Gadget, sans-serif;
+        text-align: center;
 }
 
 h3 {
@@ -84,7 +117,7 @@ img {
 	position: absolute;
 	text-align: center;
     max-height: inherit;
-    width: 400px;
+    width: 300px;
     margin-left: 300px;
     margin-top: 75px;
     height: 75px;

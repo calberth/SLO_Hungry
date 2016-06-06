@@ -1,22 +1,32 @@
 
 body {
-   color:#FF7722; /*obviously just placeholder colors for now*/
-   background-color: url(../images/test3.jpg);
-   font-family: sans-serif;
+   	background: url(../images/test3.jpg);
+   	font-family: sans-serif;
+	background-size: cover;
+        background-repeat: repeat;
 }
+
 
 h1 {
    margin: 0 0 0 0;
+        color: #248F24;
+
 }
 
 h2 {
    text-align: center;
+        color: #248F24;
+
 }
 
 h3 {
    text-align: left;
+	color: white;
 }
 
+b {
+	color: white;
+}
 
 textarea {
    height: 75px;
@@ -115,13 +125,16 @@ button:hover {
     margin-left: 620px;
     height: 400px;
     overflow: hidden;
-    border: 1px solid black;
+    border: 1px solid #248F24;
+	background-color: white;
 }
 
 .rating_box {
    position: absolute;
     margin-left: 1000;
     margin-top: 10px;
+	background-color:white;
+	border-color: #248F24;
 }
 
 .reviews {

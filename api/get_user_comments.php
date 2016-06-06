@@ -63,8 +63,12 @@ if (mysql_num_rows($result) != 0) {
    $json["comments"] = $comments;
 }
 else {
+<<<<<<< HEAD
    $json = array("status" => 0, "msg" => "No Comments");
    $json["count"] = $row["count"];
+=======
+   $json = array("status" => 0, "msg" => "No Comments $page  $uId", "count" => 0);
+>>>>>>> 5cd3ca798b69f1b07ee09dbafe355bab03a9c573
 }
 
 @mysql_close($conn);

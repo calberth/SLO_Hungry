@@ -1,13 +1,13 @@
 <?php
-//Requested URL : http://localhost/SLO_Hungry/api/get_profile_info
+//Requested URL : http://localhost/SLO_Hungry/api/get_profile_info?uId=[uId]
 
 // Include confi.php
 include_once('confi.php');
 
-$uId = isset($_POST['uId']) ? intval(mysql_real_escape_string($_POST['uId'])) :  "";
+$uId = isset($_POST['uId']) ? intval( mysql_real_escape_string($_POST['uId'])) :  "";
 
 $query = "SELECT * FROM Profiles
-   WHERE id = '$uId'
+   WHERE id = $uId
 ;";
 
 $result = mysql_query($query);
@@ -18,7 +18,7 @@ if (mysql_num_rows($result) == 1) {
    }
 }
 else {
-   $json = array("status" => 0, "msg" => "No Profile Found  $uId");
+   $json = array("status" => 0, "msg" => "No Profile Found");
 }
 
 @mysql_close($conn);
