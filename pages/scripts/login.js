@@ -18,4 +18,13 @@ $(document).ready(function(){
          "json"
       );
    });
+
+   $("#guest").click(function() {
+      $.ajax({
+         url: "http://localhost:8080/SLO_Hungry/api/login.php",
+         async: false,
+      });
+   });
 });
+
+

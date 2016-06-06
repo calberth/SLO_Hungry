@@ -2,67 +2,18 @@
 <html>
 <head>
 
-<style>
-.overlay {
-	border: 3px solid;
-	border-color:#248F24;
-	background-color:white;
-	margin-left: 10px;
-	margin-right: 10px;
-	margin-top:10px;
-	padding-bottom: 50px;
-	backgroundsize: cover;
-	border-radius: 25px 26px;
-}
-
-body {
-	background: url(../images/test3.jpg);
-	background-size:cover;
-	background-repeat:repeat;
-}
-
-.user_image {
-	margin-top: 30px;
-	margin-left:40px;
-	height:200px;
-	width:200px;
-	position:absolute;
-	border:2px solid;
-	border-color:black;
-}
-
-.user_details {
-	text-align:left;
-	margin-top:20px;
-	position:absolute;
-	margin-left:300px;
-	color:#248F24;	
-}
-
-.user_favorites {
-	text-align:left;
-	margin-right:5px;
-	margin-top:20px;
-	margin-left:700px;
-	position:absolute;
-	color:#F54D70
-}
-
-.reviews {
-	margin-left:40px;
-	color:#00688B;
-	margin-top:300px;
-}
-
-</style>
-
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 <script type="text/javascript" src = "scripts/profile.js"></script>
+<link rel="stylesheet" type="text/css" href="../style/profile.css" />
 
 </head>
 
 <body>
+<div class="header">
+	<h4><a id = "search"> Search More Restaurants </a></h4>
+   <h4><a id = "login"> Go back to Login </a></h4>
+</div>
 <div class="overlay">
 	<div class="user">
 		<div class="user_image">
@@ -70,21 +21,40 @@ body {
 		</div>
 		<div class="user_details">
 			<h1 id="user_name">[username]</h1>
-			<button>test</button> <!-- remove these later -->
-			<input id="test" type="text"/>
-			<h3 <i>Reviews: </i><i id="reviews"></i></h3>
+			<h3 id="reviews"></h3>
 		</div>
 		<div class="user_favorites">
-			<h1>YOU LOVE</h1>
-			<h3>Food 1</h3>
-			<h3>Food 2</h3>
+			<table id = "favs" border="1">
+				<thead>
+					<tr>
+						<th>Favorite Restaurants</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+			<div>
+				<button id="prevFav">Previous</button>
+				<button id="nextFav">Next</button>
+			</div>
 		</div>
 	</div>
 
 	<div class="reviews">
-		<h1>RECENT REVIEWS</h1>
-		<li>Name</li>
-		<li>comment</li>
+		<table id = "comments" border="1">
+			<thead>
+				<tr>
+					<th>Restaurant</th>
+					<th>Comment</th>
+					<th>Price</th>
+					<th>Rating</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+		<div>
+			<button id="prevComment">Previous</button>
+			<button id="nextComment">Next</button>
+		</div>
 	</div>
 </div>
 <script>

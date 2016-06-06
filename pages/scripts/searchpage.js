@@ -25,6 +25,7 @@ $(document).ready(function(){
       $("#profile").hide();
    }
 
+   document.getElementById("login").href = "http://localhost:8080/SLO_Hungry/pages/homepage.html";
    document.getElementById("profile").href = "http://localhost:8080/SLO_Hungry/pages/profile.html#" + uid;
    document.getElementById("Barbecue").href = "http://localhost:8080/SLO_Hungry/pages/listings.html#" + uid +"&" + 1;
    document.getElementById("Delis").href = "http://localhost:8080/SLO_Hungry/pages/listings.html#" + uid +"&" + 2;
@@ -57,7 +58,7 @@ $(document).ready(function(){
          }
       },
       'json'
-   );
+      );
    }); 
 
 });

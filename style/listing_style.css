@@ -6,6 +6,21 @@ body {
 	font-family: sans-serif;
 }
 
+h4 a {
+   color: white;
+   float: right;
+   margin-right: 15px; 
+}
+
+.header {
+   text-align:right;
+   margin: auto 5px;
+   color:#248F24;
+   font-family: "Ariel Black", Gadget, sans-seriff;
+   height: 25px;
+}
+
+
 #name {
 	width: 250px;
 }
@@ -59,16 +74,11 @@ p {
 	text-align: center;
 	color: #A2BC13;
 }
-a:link {
-	color:#3A3A38;
-}
+
 a:hover {
 	color:#A2BC13;
 }
 
-a:active {
-	color:#A2BC13;
-}
 
 ul {
 	padding: 0 0 0 0;

@@ -19,7 +19,7 @@ $result = mysql_query($query);
 $row = mysql_fetch_assoc($result);
 $json["count"] = $row["count"];
 
-$query = "SELECT V.name, R.comment, R.rating, R.price FROM Profiles P
+$query = "SELECT V.name, V.id, R.comment, R.rating, R.price FROM Profiles P
    JOIN Reviews R ON P.id = R.userId
    JOIN Restaurants V ON V.id = R.restId
    WHERE P.id = $uId
@@ -37,38 +37,23 @@ if (mysql_num_rows($result) != 0) {
       $comment = $row['comment'];
       $price = $row['price'];
       $rating = $row['rating'];
-      if (!is_null($comment) && !is_null($price) && !is_null($rating)) {
-         array_push($comments, array('name' => $restaurant, 'comment' => $comment, 'price' => $price,
-          'rating' => $rating));
+      if (is_null($comment)) {
+         $comment = "NA";
+      } 
+      if (is_null($price)) {
+         $price = "NA";
+      } 
+      if(is_null($rating)) {
+         $rating = "NA";
       }
-      else if (!is_null($price) && !is_null($rating)) {
-        array_push($comments, array('restaurant' => $restaurant, 'price' => $price,  'rating' => $rating));
-      }
-      else if (!is_null($comment) && !is_null($rating)) {
-         array_push($comments, array('restaurant' => $restaurant, 'comment' => $comment,  'rating' => $rating));
-      }
-      else if (!is_null($comment) && !is_null($price)) {
-         array_push($comments, array('restaurant' => $restaurant, 'comment' => $comment,  'price' => $price));
-      }
-      else if (!is_null($price)) {
-         array_push($comments, array('restaurant' => $restaurant, 'price' => $price));
-      }
-      else if (!is_null($rating)) {
-         array_push($comments, array('restaurant' => $restaurant, 'rating' => $rating));
-      }
-      else if (!is_null($comment)) {
-         array_push($comments, array('restaurant' => $restaurant, 'comment' => $comment));
-      }
+      array_push($comments, array('name' => $restaurant, 'rid' => $row["id"],  'comment' => $comment, 'price' => $price,'rating' => $rating));
+
    }
    $json["comments"] = $comments;
 }
 else {
-<<<<<<< HEAD
-   $json = array("status" => 0, "msg" => "No Comments");
    $json["count"] = $row["count"];
-=======
    $json = array("status" => 0, "msg" => "No Comments $page  $uId", "count" => 0);
->>>>>>> 5cd3ca798b69f1b07ee09dbafe355bab03a9c573
 }
 
 @mysql_close($conn);

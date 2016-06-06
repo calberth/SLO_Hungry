@@ -31,6 +31,14 @@ $(document).ready(function(){
    }
 
    loadResults(fid, commentspage, uid);
+
+   if (uid == 1) {
+      $("#profile").hide();
+   }
+
+   document.getElementById("search").href = "http://localhost:8080/SLO_Hungry/pages/searchpage.html#" + uid;
+   document.getElementById("login").href = "http://localhost:8080/SLO_Hungry/pages/homepage.html";
+   document.getElementById("profile").href = "http://localhost:8080/SLO_Hungry/pages/profile.html#" + uid;
    
 });
 

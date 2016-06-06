@@ -19,6 +19,20 @@ h2 {
 
 }
 
+h4 a {
+   color: white;
+   float: right;
+   margin-right: 15px; 
+}
+
+.header {
+   text-align:right;
+   margin: auto 5px;
+   color:#248F24;
+   font-family: "Ariel Black", Gadget, sans-seriff;
+   height: 25px;
+}
+
 h3 {
    text-align: left;
 	color: white;
@@ -130,11 +144,11 @@ button:hover {
 }
 
 .rating_box {
-   position: absolute;
-    margin-left: 1000;
-    margin-top: 10px;
+  position: absolute;
+  margin-left: 1000px;
+  margin-top: 10px;
 	background-color:white;
-	border-color: #248F24;
+	border: 1px solid #248F24;
 }
 
 .reviews {

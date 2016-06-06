@@ -164,7 +164,14 @@ $(document).ready(function(){
       );
    });
 
-   loadComments(rid, commentspage);   
+   if (uid == 1) {
+      $("#profile").hide();
+   }
+
+   loadComments(rid, commentspage);
+   document.getElementById("search").href = "http://localhost:8080/SLO_Hungry/pages/searchpage.html#" + uid;
+   document.getElementById("login").href = "http://localhost:8080/SLO_Hungry/pages/homepage.html";
+   document.getElementById("profile").href = "http://localhost:8080/SLO_Hungry/pages/profile.html#" + uid;   
 });
 
 function getRating (rat, id) {
@@ -198,6 +205,9 @@ function loadComments(rid, page) {
 
          if (data.count > 10 + page * 10) {
             $("#nextComment").show();
+         }
+         else {
+            $("#nextComment").hide();
          }
          if (page == 0) {
             $("#prevComment").hide();
