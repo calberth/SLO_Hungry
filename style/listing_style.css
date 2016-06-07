@@ -12,6 +12,15 @@ h4 a {
    margin-right: 15px; 
 }
 
+b {
+   color: white;
+   margin-left: 1100px;
+}
+
+#filter {
+   margin-left: 1100px;
+}
+
 .header {
    text-align:right;
    margin: auto 5px;
@@ -59,11 +68,10 @@ thead tr {
 
 
 h1 {
-	text-align: center;
+	margin-left: 250px;
 	color: white;
-        font-weight: bold;
-        font-family: "Arial Black", Gadget, sans-serif;
-        text-align: center;
+   font-weight: bold;
+   font-family: "Arial Black", Gadget, sans-serif;
 }
 
 h3 {

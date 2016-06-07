@@ -4,6 +4,31 @@ h4 a {
    margin-right: 15px; 
 }
 
+table, th, td {
+   border: 3px solid #248F24;
+   border-collapse: collapse;
+}
+
+#comments {
+   width: 1250px;
+   border-radius: 25px 26px;
+}
+
+#fav {
+   width: 100px;
+   border-radius: 25px 26px;
+}
+
+tbody tr{
+   height: 100;
+   background-color:white;
+   text-align: center;
+}
+
+thead tr {
+   background-color:white;
+}
+
 .header {
    text-align:right;
    margin: auto 5px;

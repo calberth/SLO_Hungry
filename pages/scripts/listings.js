@@ -36,6 +36,11 @@ $(document).ready(function(){
       $("#profile").hide();
    }
 
+   document.getElementById("filter").onchange = function() {
+      alert("hello");
+      loadResults(fid, commentspage, uid);
+   }
+
    document.getElementById("search").href = "http://localhost:8080/SLO_Hungry/pages/searchpage.html#" + uid;
    document.getElementById("login").href = "http://localhost:8080/SLO_Hungry/pages/homepage.html";
    document.getElementById("profile").href = "http://localhost:8080/SLO_Hungry/pages/profile.html#" + uid;
@@ -43,9 +48,13 @@ $(document).ready(function(){
 });
 
 function loadResults(fid, page, uid) {
+   var filter = document.getElementById("filter");
+   filter = filter.options[filter.selectedIndex].value;
+
    $.post("http://localhost:8080/SLO_Hungry/api/search_restaurants.php",
       {fid: fid,
-       page: page, 
+       page: page,
+       filter: filter 
       },
       function(data) {
          var table = document.getElementById("results").getElementsByTagName('tbody')[0];
