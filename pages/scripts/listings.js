@@ -37,7 +37,6 @@ $(document).ready(function(){
    }
 
    document.getElementById("filter").onchange = function() {
-      alert("hello");
       loadResults(fid, commentspage, uid);
    }
 
